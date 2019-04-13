@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget{
       // 自定义主题样本
       theme: ThemeData(),
 //      theme: ThemeData.light(),
-      home: MyBottomActionbar(),
+      home: BottomNavigationWidget(),
     );
   }
 }

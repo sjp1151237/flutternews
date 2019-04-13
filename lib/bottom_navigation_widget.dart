@@ -3,6 +3,7 @@ import 'package:flutter_app/pages/airplay_dart.dart';
 import 'package:flutter_app/pages/email_dart.dart';
 import 'package:flutter_app/pages/home_dart.dart';
 import 'package:flutter_app/pages/page_dart.dart';
+import 'package:flutter_app/pages/list_demo_two.dart';
 
 // 动态widget stful 里面的东西是变化的 有两部分 一部分是继承 StatefulWidget 一部分继承State
 class BottomNavigationWidget extends StatefulWidget {
@@ -16,15 +17,27 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   int _currentIndex = 1;
   List<Widget> pageList = List();
 
+  List<String> ages = List();
+
   // 初始化
   @override
   void initState() {
+    super.initState();
+    ages
+      ..add('式 简单说')
+      ..add('模式')
+      ..add('建造者模式')
+      ..add('是添加')
+      ..add('建造')
+      ..add('是添加什么返')
+      ..add('是添加什么');
+
     pageList
+      ..add(new ListDemo(items:ages))
       ..add(Airplay())
       ..add(Email())
       ..add(Pages())
       ..add(HomePage()); // .. 建造者模式 简单说就是添加什么返回什么
-    super.initState();
   }
 
   @override
@@ -39,6 +52,15 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             });
           }, // 点击事件
           items: [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.label,
+                  color: _BottomNavigationColor,
+                ),
+                title: Text(
+                  'List',
+                  style: TextStyle(color: _BottomNavigationColor),
+                )),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
