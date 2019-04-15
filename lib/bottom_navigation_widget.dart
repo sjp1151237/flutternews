@@ -3,7 +3,11 @@ import 'package:flutter_app/pages/airplay_dart.dart';
 import 'package:flutter_app/pages/email_dart.dart';
 import 'package:flutter_app/pages/home_dart.dart';
 import 'package:flutter_app/pages/page_dart.dart';
-import 'package:flutter_app/pages/list_demo_two.dart';
+import 'package:flutter_app/widgets/card_layout.dart';
+import 'package:flutter_app/widgets/column_layout.dart';
+import 'package:flutter_app/widgets/list_demo_two.dart';
+import 'package:flutter_app/widgets/row_layout.dart';
+import 'package:flutter_app/widgets/stack_layout.dart';
 
 // 动态widget stful 里面的东西是变化的 有两部分 一部分是继承 StatefulWidget 一部分继承State
 class BottomNavigationWidget extends StatefulWidget {
@@ -33,7 +37,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
       ..add('是添加什么');
 
     pageList
-      ..add(new ListDemo(items:ages))
+      ..add(CardLayout())
       ..add(Airplay())
       ..add(Email())
       ..add(Pages())

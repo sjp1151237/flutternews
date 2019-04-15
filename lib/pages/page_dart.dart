@@ -10,10 +10,10 @@ class Pages extends StatelessWidget {
       appBar: AppBar(title: Text('ListDemo'),),
       body:new ListView(
         children: <Widget>[
-          new Image.network("https://cdn2.jianshu.io/assets/web/qingteng-be381813e92784a4c01c608834f76eb2.png"),
-          new Image.network("https://cdn2.jianshu.io/assets/web/qingteng-be381813e92784a4c01c608834f76eb2.png"),
-          new Image.network("https://cdn2.jianshu.io/assets/web/qingteng-be381813e92784a4c01c608834f76eb2.png"),
-          new Image.network("https://cdn2.jianshu.io/assets/web/qingteng-be381813e92784a4c01c608834f76eb2.png"),
+          new Image.asset('images/splash.jpg'),
+          new Image.asset('images/splash.jpg'),
+          new Image.asset('images/touxiang.png'),
+          new Image.asset('images/touxiang.png'),
           new ListTile(
             leading: new Icon(Icons.ac_unit),
             title: new Text('东兴'),

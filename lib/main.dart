@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/appnavigation/home_navi.dart';
+import 'package:flutter_app/appnavigation/produce_list_page.dart';
+import 'package:flutter_app/httpget/http_get_test.dart';
 import 'package:flutter_app/pages/my_bottom_actionbar.dart';
 import 'bottom_navigation_widget.dart';
 
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget{
       // 自定义主题样本
       theme: ThemeData(),
 //      theme: ThemeData.light(),
-      home: BottomNavigationWidget(),
+      home: HttpTest(),
     );
   }
 }

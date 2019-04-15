@@ -13,8 +13,8 @@ class Email extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(10.0,10.0,0,0),
         margin: const EdgeInsets.all(15),
         decoration: new BoxDecoration(
-            border: Border.all(width: 2.0,color: Colors.amberAccent),
-            gradient: const LinearGradient(colors: [Colors.blue,Colors.deepOrangeAccent])),
+            border: Border.all(width: 2.0,color: Colors.amberAccent),// 描边
+            gradient: const LinearGradient(colors: [Colors.blue,Colors.deepOrangeAccent])), //渐变
       ),),
     );
   }
