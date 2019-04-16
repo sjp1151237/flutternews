@@ -8,6 +8,7 @@ import 'package:flutter_app/widgets/column_layout.dart';
 import 'package:flutter_app/widgets/list_demo_two.dart';
 import 'package:flutter_app/widgets/row_layout.dart';
 import 'package:flutter_app/widgets/stack_layout.dart';
+import 'package:flutter_app/widgets/swiper_widget.dart';
 
 // 动态widget stful 里面的东西是变化的 有两部分 一部分是继承 StatefulWidget 一部分继承State
 class BottomNavigationWidget extends StatefulWidget {
@@ -18,7 +19,7 @@ class BottomNavigationWidget extends StatefulWidget {
 class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 // 下划线代表内部使用
   final _BottomNavigationColor = Colors.blue;
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   List<Widget> pageList = List();
 
   List<String> ages = List();
@@ -37,7 +38,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
       ..add('是添加什么');
 
     pageList
-      ..add(CardLayout())
+      ..add(HomeSwiper())
       ..add(Airplay())
       ..add(Email())
       ..add(Pages())
@@ -47,7 +48,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pageList[_currentIndex],
+      appBar: AppBar(title: Text('百姓生活'),),
+      body: IndexedStack(index: _currentIndex,children: pageList,),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (int index) {

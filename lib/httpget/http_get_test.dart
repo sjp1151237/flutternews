@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'http_headers.dart';
+import '../service/service_method.dart';
 
+
+// SingleChildScrollView 让子组件滑动更滑顺畅 但是不能与list配合使用
 class HttpTest extends StatefulWidget {
   @override
   _HttpTestState createState() => _HttpTestState();
@@ -56,10 +59,11 @@ class _HttpTestState extends State<HttpTest> {
                 title: Text('类型不为空'),
               ));
     } else {
-      getHttp(typeController.text.toString()).then((val) {
+      getHomePageContent().then((val) {
         // 动态函数
         setState(() {
-//          showText = val['data']['name'].toString();
+          showText = val.toString();
+          print(val.toString());
         });
       });
     }
